@@ -2,7 +2,7 @@ import KanbanBoard from "./components/KanbanBoard";
 
 function App() {
   return (
-    <div className="bg-black">
+    <div>
       <KanbanBoard></KanbanBoard>
     </div>
   )
