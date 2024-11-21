@@ -1,7 +1,8 @@
-<h1 align="center">Kanban Board</h1>
 <div align="center">
-    <img src="/Kanban.png">
-<div>
+    <h1>Kanban Board</h1>
+    <img src="/Kanban.png" height="400">
+</div>
+
 <p>
     Kanban Board allows users to create, manage, and organize tasks into customizable columns. Users can add new tasks, move them between columns (e.g., To Do, In Progress, Done) using drag-and-drop, and customize each column’s color. The app uses React for dynamic UI updates and local storage to persist data across sessions. This project demonstrates fundamental React concepts like state management, event handling, and working with local storage for persistence.
 </p>
