@@ -1,9 +1,12 @@
 import { GoPlusCircle } from "react-icons/go";
 
-export default function AddNewTask() {
+export default function AddNewTask({ setOpenModal }) {
+    
     // function to open modal
     function handleClick() {
-        alert('the modal is open')
+        if(setOpenModal) {
+            setOpenModal(true);
+        }
     };
 
     return (

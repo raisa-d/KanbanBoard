@@ -58,8 +58,11 @@
 - Mobile-first Design: The app is built to be responsive and works on both desktop and mobile devices.
 
 ## Development Stage
-<!--  -->
-### Development Stage
+
+**Nov 23, 2024:**
+Today, I went back to the React docs to refamiliarize myself with event handling using React. I am still deciding where the best place is to include the openModal state for adding a new task. 
+As I started working on that, I realized I needed to add an Add/Close button to the new task form and style it as a modal.
+I am trying to figure out where the state for the open modal should live. I have decided that NewTaskForm will be within the App component, since it is one modal across the whole app. The openModal will be triggered by clicking "Add new task" and the modal will be closed by clicking "cancel" or outside of the modal. So I will need to have openModal and setOpenModal live in App and pass them both down as props to NewTaskForm. Then I will pass only setOpenModal down thorugh KanbanBoard > Column > AddNewTask.
 
 **Nov 21, 2024:**
 - Started by creating a boilerplate React app using `create vite@latest`.

@@ -1,7 +1,7 @@
 import TaskCard from "./TaskCard";
 import AddNewTask from "./AddNewTask";
 
-const Column = ({ title }) => {
+const Column = ({ title, setOpenModal }) => {
   
   return (
     <div className="border border-white rounded-xl min-h-32 mb-3 p-2">
@@ -10,7 +10,7 @@ const Column = ({ title }) => {
 
         {/* Render "Add New Task" only if the column is "To Do" */}
         {title === "To Do" && (
-          <AddNewTask/>
+          <AddNewTask setOpenModal={setOpenModal}/>
         )}
     </div>
   )
