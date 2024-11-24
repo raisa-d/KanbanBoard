@@ -60,8 +60,8 @@
 
 ## Development Stage
 
-**Nov 23, 2024:**
-### Event Handling & Modal State**
+### **Nov 23, 2024:**
+**Event Handling & Modal State**
 - Went back to the React docs to refamiliarize myself with event handling.
 - I was still deciding where the best place is to store the `openModal` state for adding a new task.
 - Realized I needed to add an Add/Close button to the new task form and style it as a modal.
@@ -71,10 +71,7 @@
 - The `setOpenModal` function will then be passed through `KanbanBoard` > `Column` > `AddNewTask`.
 - Plan to improve this by having the modal close by clicking outside of it and add an "Are you sure?" prompt to make sure they don't lose their work.
 
----
-
-### **6:21 PM - Editable Title**
-
+**6:21 PM - Editable Title**
 - Decided to make the board title editable.
 - Placed the title state in the `KanbanBoard` component.
 - When the user is not editing, the title is displayed as a read-only `<h1>`.
@@ -82,7 +79,9 @@
 - Currently, users can press **Enter** to submit the new title.
 - Plan to improve this in the future by adding clearer submit and cancel actions (e.g., check and X buttons).
 
-**Nov 21, 2024:**
+--
+
+### **Nov 21, 2024:**
 - Started by creating a boilerplate React app using `create vite@latest`.
 
 **Steps Taken:**
