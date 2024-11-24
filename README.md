@@ -1,6 +1,7 @@
 <div align="center">
     <h1>Kanban Board</h1>
     <img src="/Kanban.png" height="400">
+    <img src="/Modal.png" height="400">
 </div>
 
 <p>
@@ -60,9 +61,26 @@
 ## Development Stage
 
 **Nov 23, 2024:**
-Today, I went back to the React docs to refamiliarize myself with event handling using React. I am still deciding where the best place is to include the openModal state for adding a new task. 
-As I started working on that, I realized I needed to add an Add/Close button to the new task form and style it as a modal.
-I am trying to figure out where the state for the open modal should live. I have decided that NewTaskForm will be within the App component, since it is one modal across the whole app. The openModal will be triggered by clicking "Add new task" and the modal will be closed by clicking "cancel" or outside of the modal. So I will need to have openModal and setOpenModal live in App and pass them both down as props to NewTaskForm. Then I will pass only setOpenModal down thorugh KanbanBoard > Column > AddNewTask.
+### Event Handling & Modal State**
+- Went back to the React docs to refamiliarize myself with event handling.
+- I was still deciding where the best place is to store the `openModal` state for adding a new task.
+- Realized I needed to add an Add/Close button to the new task form and style it as a modal.
+- After considering different approaches, I decided that the `NewTaskForm` will be nested within the `App` component. Since the modal is a global feature in the app, the `openModal` state will live in `App`.
+- The modal will be triggered by clicking "Add new task" and can be closed by clicking "cancel."
+- Therefore, I’ll need to store both `openModal` and `setOpenModal` in `App` and pass them down as props to `NewTaskForm`.
+- The `setOpenModal` function will then be passed through `KanbanBoard` > `Column` > `AddNewTask`.
+- Plan to improve this by having the modal close by clicking outside of it and add an "Are you sure?" prompt to make sure they don't lose their work.
+
+---
+
+### **6:21 PM - Editable Title**
+
+- Decided to make the board title editable.
+- Placed the title state in the `KanbanBoard` component.
+- When the user is not editing, the title is displayed as a read-only `<h1>`.
+- When the pencil icon is clicked, the title switches to an input field for editing.
+- Currently, users can press **Enter** to submit the new title.
+- Plan to improve this in the future by adding clearer submit and cancel actions (e.g., check and X buttons).
 
 **Nov 21, 2024:**
 - Started by creating a boilerplate React app using `create vite@latest`.
@@ -90,18 +108,26 @@ I am trying to figure out where the state for the open modal should live. I have
      - **Modal state** (`isModalOpen`) to control the visibility of the New Task Form.
 
 ## Next Steps
-1. Implement functionality to open the `NewTaskForm` modal when the plus button is clicked.
-2. Add state management for:
+- Save kanban board title in local storage
+- Have modal close by clicking outside of it and add an "Are you sure?" prompt to make sure they don't lose their work.
+- Implement functionality to add a task via the `NewTaskForm` modal when the plus button is clicked.
+- Add state management for:
    - **Kanban board title**.
    - **Array of column objects** (id, title, color).
    - **Array of task objects** (id, title, description, status).
-   - **`isModalOpen`** to manage the modal visibility.
-3. Add drag and drop functionality
-4. Refine styling
+   - **Adding tasks to board**.
+- Add drag and drop functionality
+- Refine styling
 
 ## Optimizations
+- Add a submit/cancel button for the title editing.
 - Add color picker for each column background, put picker to right of column title
-- Allow toggle dark/light mode
+- Toggle dark/light mode
+- Add color picker to NewTaskForm so user can pick color of each task as well
+- Add a secret easter egg charcuterie board mode. All the tasks will become cheese/boards will be wooden, etc.
+- Add ability for multiple projects
+- Add a database
+- Add team-collaboration/assign tasks to a person
 
 ## Lessons Learned
 - Re-familiarized myself with the basics of **React**.
