@@ -59,7 +59,10 @@
 - Mobile-first Design: The app is built to be responsive and works on both desktop and mobile devices.
 
 ## Development Stage
-
+### **Nov 24, 2024:**
+First, I decided to move AddNewTask from its own jsx file into Column.jsx since it was a small function that is only used in the Column component.
+I reread some of the React docs while I thought about how I want to pass in the various tasks/task cards into each column. I have decided to set a prop "children" for Column and then pass in the tasks object/task cards as the children. The tasks will conditionally render based on which column its supposed to be in. Using a children prop makes it so we don't need to know what will be inside each Column.
+---
 ### **Nov 23, 2024:**
 **Event Handling & Modal State**
 - Went back to the React docs to refamiliarize myself with event handling.
@@ -79,7 +82,7 @@
 - Currently, users can press **Enter** to submit the new title.
 - Plan to improve this in the future by adding clearer submit and cancel actions (e.g., check and X buttons).
 
---
+---
 
 ### **Nov 21, 2024:**
 - Started by creating a boilerplate React app using `create vite@latest`.
@@ -107,6 +110,7 @@
      - **Modal state** (`isModalOpen`) to control the visibility of the New Task Form.
 
 ## Next Steps
+- Let kanban title grow depending on size of title
 - Save kanban board title in local storage
 - Have modal close by clicking outside of it and add an "Are you sure?" prompt to make sure they don't lose their work.
 - Implement functionality to add a task via the `NewTaskForm` modal when the plus button is clicked.
@@ -127,6 +131,7 @@
 - Add ability for multiple projects
 - Add a database
 - Add team-collaboration/assign tasks to a person
+- Allow users to make more columns and rename the columns
 
 ## Lessons Learned
 - Re-familiarized myself with the basics of **React**.

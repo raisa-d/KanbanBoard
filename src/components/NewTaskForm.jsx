@@ -4,8 +4,6 @@ const NewTaskForm = ({ openModal, setOpenModal }) => {
   function closeModal() {
     setOpenModal(false);
   }
-  
-  if (!openModal) return null;
 
   return (
     <div className="fixed top-0 bg-black bg-opacity-90 w-full h-full flex items-center justify-center">
