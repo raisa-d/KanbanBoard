@@ -1,7 +1,7 @@
 <div align="center">
     <h1>Kanban Board</h1>
-    <img src="/Kanban.png" height="400">
-    <img src="/Modal.png" height="400">
+    <img src="/Kanban.png" height="400" alt="Kanban Board app, from top to bottom: Title of board (My Kanban Board), 3 columns with a mostly transparent blue background (to do, in progress, done), an example task inside each. The to do column has an 'Add New Task' butotn">
+    <img src="/Modal.png" height="400" alt="The modal to add a new task is open. Mostly transparent pink background. Title says 'Add New Task', there is an input for the task title and description. At the bottom, there is an add and cancel button.">
 </div>
 
 <p>
