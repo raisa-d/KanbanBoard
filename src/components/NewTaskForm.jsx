@@ -1,7 +1,7 @@
 import Button from "./Button";
 
-const NewTaskForm = ({ openModal, setOpenModal }) => {
-  function closeModal() {
+const NewTaskForm = ({ setOpenModal }) => {
+  function handleCloseModal() {
     setOpenModal(false);
   }
 
@@ -20,11 +20,11 @@ const NewTaskForm = ({ openModal, setOpenModal }) => {
                 <label htmlFor="desc" className="mx-3">Description</label>
                 <textarea rows="5" id="desc" name="desc" className="bg-black border border-white rounded-lg py-1 px-3" placeholder="I.e., Design 1 mobile and 1 desktop layout"/>
             </div>
+            <div className="flex justify-center">
+              <Button type="submit">Add</Button>
+              <Button onClick={handleCloseModal}>Cancel</Button>
+            </div>
         </form>
-        <div>
-          <Button text="Add"></Button>
-          <Button text="Cancel" onClick={closeModal}></Button>
-        </div>
       </section>
     </div>
   )

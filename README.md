@@ -59,6 +59,22 @@
 - Mobile-first Design: The app is built to be responsive and works on both desktop and mobile devices.
 
 ## Development Stage
+### **Nov 26, 2024:**
+The KanbanBoard component was looking like it did way too much so I moved some code into its own component, EditableTitle and moved the Column components into App.jsx and passed them into KanbanBoard as children props.
+Saving Kanban title in local storage:
+- When I useState for the boardTitle, I initialized it to an arrow function that either returns the boardtitle taht is saved in local storage or a placeholder "My Kanban Board." 
+- I used the useEffect hook to update the title in localStorage once it is updated by the user's input
+Steps I'll take for adding tasks:
+- change button type to submit ✅
+- create state for title and description
+- textarea and text onChange -> set title and description(e.target.value)
+- form element: add onSubmit={handleSubmit}
+- handleSubmit will save to tasks object/local storage
+
+Working on:
+- making Kanban title input width expand so it's as wide as necessary
+- state management for tasks
+---
 ### **Nov 24, 2024:**
 First, I decided to move AddNewTask from its own jsx file into Column.jsx since it was a small function that is only used in the Column component.
 I reread some of the React docs while I thought about how I want to pass in the various tasks/task cards into each column. I have decided to set a prop "children" for Column and then pass in the tasks object/task cards as the children. The tasks will conditionally render based on which column its supposed to be in. Using a children prop makes it so we don't need to know what will be inside each Column.
@@ -111,11 +127,9 @@ I reread some of the React docs while I thought about how I want to pass in the 
 
 ## Next Steps
 - Let kanban title grow depending on size of title
-- Save kanban board title in local storage
 - Have modal close by clicking outside of it and add an "Are you sure?" prompt to make sure they don't lose their work.
 - Implement functionality to add a task via the `NewTaskForm` modal when the plus button is clicked.
 - Add state management for:
-   - **Kanban board title**.
    - **Array of column objects** (id, title, color).
    - **Array of task objects** (id, title, description, status).
    - **Adding tasks to board**.
