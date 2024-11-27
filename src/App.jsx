@@ -3,7 +3,7 @@ import KanbanBoard from "./components/KanbanBoard";
 import NewTaskForm from "./components/NewTaskForm";
 import Column from "./components/Column";
 
-function App() {
+export default function App() {
   // openModal state
   const [openModal, setOpenModal] = useState(false);
   
@@ -15,10 +15,8 @@ function App() {
         <Column title="Done"/>
       </KanbanBoard>
       {openModal && (
-        <NewTaskForm openModal={openModal} setOpenModal={setOpenModal}></NewTaskForm>
+        <NewTaskForm setOpenModal={setOpenModal}></NewTaskForm>
       )}
     </div>
   )
-}
-
-export default App
+};

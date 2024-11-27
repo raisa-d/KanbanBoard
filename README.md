@@ -60,25 +60,36 @@
 
 ## Development Stage
 ### **Nov 26, 2024:**
-The KanbanBoard component was looking like it did way too much so I moved some code into its own component, EditableTitle and moved the Column components into App.jsx and passed them into KanbanBoard as children props.
-Saving Kanban title in local storage:
-- When I useState for the boardTitle, I initialized it to an arrow function that either returns the boardtitle taht is saved in local storage or a placeholder "My Kanban Board." 
-- I used the useEffect hook to update the title in localStorage once it is updated by the user's input
-Steps I'll take for adding tasks:
-- change button type to submit ✅
-- create state for title and description
-- textarea and text onChange -> set title and description(e.target.value)
-- form element: add onSubmit={handleSubmit}
-- handleSubmit will save to tasks object/local storage
+**Refactoring KanbanBoard component**
+- To streamline the `KanbanBoard` component and improve readability:
+  - Created a new `EditableTitle` component to handle the board title logic and UI.
+  - Moved the `Column` components out of `KanbanBoard` and into `App.jsx`. These are now passed to `KanbanBoard` as `children` props.
 
-Working on:
-- making Kanban title input width expand so it's as wide as necessary
-- state management for tasks
+**Saving Kanban title in local storage:**
+- Used `useState` for the `boardTitle`. 
+  - The state is initialized by checking if a title exists in `localStorage`. If not, it defaults to "My Kanban Board."
+- Leveraged the `useEffect` hook to ensure that the board title in `localStorage` updates whenever the user modifies the title.
+  - This approach keeps the local storage and app state in sync efficiently.
+
+**Steps I'll take for adding tasks:**
+1. Changed the "Add" button type to `submit`. ✅
+2. Added state variables for task title and description. ✅
+3. Linked the input fields (`textarea` and `text`) to state via `onChange` handlers. ✅
+4. Wrapped the input fields in a `form` element and added an `onSubmit={handleSubmit}` handler. ✅
+5. Implement `handleSubmit` to save tasks into an object and store them in `localStorage`. (TO DO NEXT TIME)
+
+**Current Focus Areas**
+- Dynamic input width for kanban title
+- Finish implementing task state management
+
 ---
+
 ### **Nov 24, 2024:**
-First, I decided to move AddNewTask from its own jsx file into Column.jsx since it was a small function that is only used in the Column component.
-I reread some of the React docs while I thought about how I want to pass in the various tasks/task cards into each column. I have decided to set a prop "children" for Column and then pass in the tasks object/task cards as the children. The tasks will conditionally render based on which column its supposed to be in. Using a children prop makes it so we don't need to know what will be inside each Column.
+- First, I decided to move AddNewTask from its own jsx file into Column.jsx since it was a small function that is only used in the Column component.
+- I reread some of the React docs while I thought about how I want to pass in the various tasks/task cards into each column. I have decided to set a prop "children" for Column and then pass in the tasks object/task cards as the children. The tasks will conditionally render based on which column its supposed to be in. Using a children prop makes it so we don't need to know what will be inside each Column.
+
 ---
+
 ### **Nov 23, 2024:**
 **Event Handling & Modal State**
 - Went back to the React docs to refamiliarize myself with event handling.
@@ -126,7 +137,7 @@ I reread some of the React docs while I thought about how I want to pass in the 
      - **Modal state** (`isModalOpen`) to control the visibility of the New Task Form.
 
 ## Next Steps
-- Let kanban title grow depending on size of title
+- Dynamic kanban title input width
 - Have modal close by clicking outside of it and add an "Are you sure?" prompt to make sure they don't lose their work.
 - Implement functionality to add a task via the `NewTaskForm` modal when the plus button is clicked.
 - Add state management for:
