@@ -154,7 +154,7 @@
 - Add color picker to NewTaskForm so user can pick color of each task as well
 - Add a secret easter egg charcuterie board mode. All the tasks will become cheese/boards will be wooden, etc.
 - Add ability for multiple projects
-- Add a database
+- Add a database. I am doing so [here](https://github.com/raisa-d/Kanban-Board-Backend-First)
 - Add team-collaboration/assign tasks to a person
 - Allow users to make more columns and rename the columns
 
